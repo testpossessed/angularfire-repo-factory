@@ -1,0 +1,30 @@
+{
+    "name": "@testpossessed/angularfire-repo-factory",
+    "version": "1.0.0",
+    "description": "Provides a service that acts as a factory for generic repositories to access Firebase using AngularFire",
+    "author": "Mike Hanson",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/testpossessed/angularfire-repo-factory.git"
+    },
+    "bugs": {
+        "url": "https://github.com/testpossessed/angularfire-repo-factory/issues"
+    },
+    "homepage": "https://github.com/testpossessed/angularfire-repo-factory",
+    "keywords": [
+        "angular",
+        "angularfire",
+        "firebase",
+        "repository",
+        "factory",
+        "javascript",
+        "typescript"
+    ],
+    "license": "MIT",
+    "peerDependencies": {
+        "@angular/common": "^8.2.14",
+        "@angular/core": "^8.2.14",
+        "@angular/fire": "^5.3.0",
+        "firebase": "^7.6.2"
+    }
+}
