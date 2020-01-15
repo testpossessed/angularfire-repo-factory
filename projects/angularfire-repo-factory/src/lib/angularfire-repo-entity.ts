@@ -1,3 +1,3 @@
-export abstract class AngularFireRepoEntity {
-    id: string;
+export interface IAngularFireRepoEntity {
+    id?: string;
 }

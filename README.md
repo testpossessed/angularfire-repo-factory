@@ -112,6 +112,18 @@ export class MyComponent {
 }
 ```
 
+### Entities
+
+Within the repo we map the document identifier (whether generated automatically or explicitly) to a field named _id_. To be sure TypeScript doesn't complain about this we have a generic constraint on the _T_ you pass to the factory when creating a repo. The constraint requires that your entities implemnt the IAngularFireRepoEntity interface that defines an optional _id_ property. It is optional so you can leave it off when creating new entities, but will be populated when during creation or retrieving. So your types need to look something like this:
+
+```ts
+export interface IToDo extends IAngularFireRepoEntity {
+    title: string;
+    desription?: string;
+    done?: boolean;
+}
+```
+
 Simple as that. Constructive critcism and suggestions are encouraged, please post an issue with your suggestion or comment and it will be dealt with as soon as time allows.
 
 Contributions will be considered via pull request too.
