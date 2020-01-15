@@ -2,9 +2,9 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { AngularFireRepoEntity } from './angularfire-repo-entity';
+import { IAngularFireRepoEntity } from './angularfire-repo-entity';
 
-export class AngularFirestoreRepo<T extends AngularFireRepoEntity> {
+export class AngularFirestoreRepo<T extends IAngularFireRepoEntity> {
     private collection: AngularFirestoreCollection<T>;
 
     constructor(private angularFiretore: AngularFirestore, collectionPath: string) {
