@@ -1,0 +1,56 @@
+<div class='table-container'>
+  <mat-table [dataSource]="todo$" class="mat-elevation-z8">
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{item.title}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{item.description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created">
+      <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{item.created.toDate()}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="done">
+      <mat-header-cell *matHeaderCellDef> Done </mat-header-cell>
+      <mat-cell *matCellDef="let item">
+        <mat-checkbox [checked]="item.done" (change)='toggleDone(item)'></mat-checkbox>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="completed">
+      <mat-header-cell *matHeaderCellDef> Completed </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{item.completed? item.completed.toDate(): null}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+  <div class='new-task-container'>
+    <mat-card>
+      <mat-card-title>
+        Add New Task
+      </mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="full-width-field">
+            <input matInput placeholder="Title" name='title' [(ngModel)]='title'>
+          </mat-form-field>
+
+          <mat-form-field class="full-width-field">
+            <textarea matInput placeholder="Description of the task" name='description'
+              [(ngModel)]='description'></textarea>
+          </mat-form-field>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button (click)='createTask()'>Add</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -4,3 +4,4 @@
 
 export * from './lib/angularfire-repo-factory.service';
 export * from './lib/angularfire-repo-factory.module';
+export * from './lib/angularfire-repo-entity';

@@ -1,0 +1,23 @@
+.table-container {
+  padding: 2.5em;
+}
+
+.new-task-container {
+  padding-top: 3em;
+  width: 100%;
+
+  mat-card {
+    margin: 0 auto;
+    width: 500px;
+
+    form {
+      min-width: 250px;
+      max-width: 500px;
+      width: 100%;
+
+      .full-width-field {
+        width: 100%;
+      }
+    }
+  }
+}
